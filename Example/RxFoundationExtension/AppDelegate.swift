@@ -7,17 +7,63 @@
 //
 
 import UIKit
+import RxFoundationExtension
+import RxSwift
+import RxCocoa
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    private let subject = PublishSubject<Int>()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    private let disposeBag = DisposeBag()
+
+    private let lock = NSRecursiveLock()
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        RxImagePickerDelegateProxy.register { RxImagePickerDelegateProxy(imagePicker: $0) }
+
+//        RxUIImagePickerControllerDelegateProxy.register { RxUIImagePickerControllerDelegateProxy(imagePickerController: $0)
+//        }
+
+//        Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+//            .bind(to: subject)
+//            .disposed(by: disposeBag)
+//
+//        Observable<Int>.interval(2, scheduler: MainScheduler.instance)
+//            .bind(to: subject)
+//            .disposed(by: disposeBag)
+//
+//        subject
+//            .subscribe(onNext: {
+//                print($0)
+//            })
+//            .disposed(by: disposeBag)
+
+//        print("1")
+//        DispatchQueue.main.sync {
+//            print("2")
+//        }
+//        print("3")
+
+
         return true
     }
+
+    func nslock() {
+        lock.lock()
+        print("lock")
+    }
+
+    func unlock() {
+        lock.unlock()
+        print("unlock")
+    }
+
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

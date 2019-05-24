@@ -1,0 +1,36 @@
+PODS:
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxFoundationExtension (0.1.0):
+    - RxCocoa (~> 4.4)
+    - RxFoundationExtension/UIKit (= 0.1.0)
+    - RxSwift (~> 4.4)
+  - RxFoundationExtension/UIKit (0.1.0):
+    - RxCocoa (~> 4.4)
+    - RxSwift (~> 4.4)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+
+DEPENDENCIES:
+  - RxFoundationExtension (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+
+EXTERNAL SOURCES:
+  RxFoundationExtension:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxFoundationExtension: 70f3475efa4f56cbdab8207d3c784833847ed5a5
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+
+PODFILE CHECKSUM: eff1dd8d4d2e71db50f7fac1418dc2b9bf478ef1
+
+COCOAPODS: 1.5.3

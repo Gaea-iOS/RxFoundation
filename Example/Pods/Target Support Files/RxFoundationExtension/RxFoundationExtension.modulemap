@@ -1,0 +1,6 @@
+framework module RxFoundationExtension {
+  umbrella header "RxFoundationExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}
